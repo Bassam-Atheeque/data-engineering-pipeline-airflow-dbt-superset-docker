@@ -2,9 +2,9 @@
 
 ## Overview
 
-An end-to-end, fully containerized data pipeline that extracts live weather data from an external API, orchestrates its ingestion and transformation on a schedule, and visualizes it on a real-time dashboard — built entirely with open-source tools running in Docker.
+An end-to-end, fully containerized data pipeline that extracts live weather data from an external API, orchestrates its ingestion and transformation on a schedule, and visualizes it on a real-time dashboard - built with open-source tools running in Docker.
 
-This project was built to apply core data engineering concepts outside of a managed cloud environment, in order to express the underlying mechanics. This project demonstrates end-to-end ownership of a data pipeline — from **raw ingestion through orchestration, transformation, and visualization** — using the same architectural patterns found in production systems, implemented here with open-source tools as the equivalent of their managed cloud counterparts:
+This project was built to apply core data engineering concepts outside of a managed cloud environment, in order to express the underlying mechanics. This project demonstrates end-to-end ownership of a data pipeline from - **raw ingestion through orchestration, transformation, and visualization** - using the same architectural patterns found in production systems, implemented here with open-source tools as the equivalent of their managed cloud counterparts:
 
 | Managed AWS Equivalent | Open-Source Tool Used Here |
 |---|---|
@@ -117,7 +117,7 @@ This mirrors a standard raw → staging → mart layering pattern used in produc
 
 ![Superset Dashboard](./assets/dashboard.png)
 
-Real-time weather metrics for Los Angeles, visualized in Superset and auto-refreshing on a schedule aligned to the Airflow DAG's ingestion frequency. The dashboard tracks actual vs. feels-like temperature, weather type distribution, temperature/wind speed correlation, and particulate matter concentration over time.
+Real-time weather metrics for Los Angeles, visualized in Superset and auto-refreshing on a schedule aligned to the Airflow DAG's ingestion frequency. The dashboard tracks actual vs feels-like temperature, weather type distribution, temperature/wind speed correlation, and particulate matter concentration over time.
 
 ---
 
@@ -153,7 +153,7 @@ This starts Postgres, Airflow, dbt, and Superset together on a shared network.
 
 ### Trigger the Pipeline
 
-1. Open the Airflow UI and unpause the `api_dbt_orchestrator` DAG
+1. Open the Airflow UI and unpause the `weather-api-dbt-orchestrator` DAG
 2. It will run automatically every 5 minutes, ingesting new data and running dbt transformations
 3. Open Superset, connect to the `db` database (host: `db`, port: `5432`), and build a dataset off `stg_weather_data` or `daily_average`
 
